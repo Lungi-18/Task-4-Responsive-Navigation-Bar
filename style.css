@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0f172a;
+    color: #f8fafc;
+    line-height: 1.6;
+}
+
+/* Base Navbar Styles (Desktop) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #111;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #1e293b;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #f59e0b;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f59e0b;
+}
+
+/* Hide Hamburger by default on desktop */
+.menu-toggle,
+.hamburger {
+    display: none;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, #090d16 0%, #1e293b 100%);
+    padding: 40px 20px;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    color: #cbd5e1;
+    margin-bottom: 32px;
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 14px 32px;
+    background-color: #f59e0b;
+    color: #0f172a;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.cta-btn:hover {
+    background-color: #d97706;
+    transform: translateY(-2px);
+}
+
+/* Specialties / Feature Cards Section */
+.features {
+    padding: 80px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.features h2,
+.about h2 {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+}
+
+.feature-grid {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+}
+
+.feature-card {
+    background-color: #1e293b;
+    padding: 32px 24px;
+    border-radius: 12px;
+    flex: 1;
+    border: 1px solid #334155;
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card h3 {
+    color: #f59e0b;
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+}
+
+.feature-card p {
+    color: #94a3b8;
+    font-size: 0.95rem;
+}
+
+/* About Section */
+.about {
+    padding: 60px 20px;
+    background-color: #1e293b;
+    text-align: center;
+}
+
+.about p {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #cbd5e1;
+}
+
+/* Footer */
+.footer {
+    background-color: #111;
+    text-align: center;
+    padding: 24px 20px;
+    color: #94a3b8;
+    font-size: 0.9rem;
+    border-top: 1px solid #1e293b;
+}
+
+/* Mobile Media Query (screens 768px or smaller) */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 20px;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 28px;
+        height: 20px;
+        cursor: pointer;
+    }
+
+    .hamburger span {
+        display: block;
+        height: 3px;
+        width: 100%;
+        background-color: #fff;
+        border-radius: 2px;
+    }
+
+    /* Hide standard horizontal links on mobile */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        width: 100%;
+        background-color: #111;
+        padding: 20px 0;
+        text-align: center;
+        gap: 20px;
+        border-bottom: 1px solid #1e293b;
+    }
+
+    /* Show links when the checkbox is checked */
+    .menu-toggle:checked~.nav-links {
+        display: flex;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    /* Stack feature cards vertically on mobile */
+    .feature-grid {
+        flex-direction: column;
+    }
+
+    .features {
+        padding: 60px 20px;
+    }
+}
